@@ -1,0 +1,51 @@
+{
+  "compilerOptions": {
+    "target": "ES2022", // modern Node support, better performance
+    "module": "NodeNext", // enables ESM in Node.js
+    "moduleResolution": "NodeNext", // resolves ESM + CommonJS correctly
+
+    "rootDir": "./src", // source directory
+    "outDir": "./dist", // build output directory
+    "baseUrl": "./src", // enables absolute imports
+
+    "paths": {
+      "@api/*": ["api/*"], // HTTP layer alias
+      "@application/*": ["application/*"], // use-case layer alias
+      "@domain/*": ["domain/*"], // core business logic alias
+      "@infrastructure/*": ["infrastructure/*"], // external systems alias
+      "@shared/*": ["shared/*"], // reusable utilities alias
+      "@config/*": ["config/*"], // config alias
+      "@types/*": ["types/*"] // custom types alias
+    },
+
+    "ignoreDeprecations": "6.0",
+
+    "strict": true, // enables all strict type checks
+    "noImplicitAny": true, // disallow implicit any
+    "strictNullChecks": true, // enforce null safety
+    "noUncheckedIndexedAccess": true, // safe object/array access
+    "exactOptionalPropertyTypes": true, // precise optional typing
+
+    "noUnusedLocals": true, // remove unused variables
+    "noUnusedParameters": true, // remove unused params
+    "noImplicitReturns": true, // enforce return in all paths
+    "noFallthroughCasesInSwitch": true, // prevent switch fallthrough bugs
+
+    "esModuleInterop": true, // allow CommonJS imports
+    "allowSyntheticDefaultImports": true, // cleaner import syntax
+
+    "sourceMap": true, // enable debugging
+    "removeComments": true, // reduce build size
+    "declaration": true, // generate .d.ts files
+    "declarationMap": true, // map types for debugging
+
+    "incremental": true, // faster rebuilds
+    "skipLibCheck": true, // skip node_modules type checking
+
+    "forceConsistentCasingInFileNames": true, // avoid OS case issues
+    "resolveJsonModule": true // allow JSON imports
+  },
+
+  "include": ["src"], // include source
+  "exclude": ["node_modules", "dist", "tests"] // exclude unnecessary dirs
+}
